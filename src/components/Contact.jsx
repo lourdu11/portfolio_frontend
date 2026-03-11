@@ -25,7 +25,7 @@ const Contact = () => {
         setError(null);
 
         try {
-            await axios.post('http://localhost:5000/api/contact', formData);
+            await axios.post('https://portfolio-backend-njn8.onrender.com/api/contact', formData);
             setIsSubmitting(false);
             setIsSubmitted(true);
             setFormData({ name: '', email: '', subject: '', message: '' });

@@ -34,6 +34,14 @@ const Contact = () => {
             setTimeout(() => setIsSubmitted(false), 5000);
         } catch (err) {
             console.error('Error submitting form:', err);
+            if (err.response) {
+                console.error('Response data:', err.response.data);
+                console.error('Response status:', err.response.status);
+            } else if (err.request) {
+                console.error('Request made but no response received:', err.request);
+            } else {
+                console.error('Error message:', err.message);
+            }
             setError('Failed to send message. Please try again later.');
             setIsSubmitting(false);
         }
